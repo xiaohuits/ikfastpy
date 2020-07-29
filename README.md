@@ -43,7 +43,7 @@ This implementation requires the following dependencies (tested on Ubuntu 16.04.
 
 ## Modifying Robot Kinematics with OpenRave
 
-1. Download and install [OpenRave](http://openrave.org/). See [these installation instructions](https://scaron.info/teaching/installing-openrave-on-ubuntu-16.04.html) for Ubuntu 16.04.
+1. Download and install [OpenRave](http://openrave.org/).Use [this bash script](https://github.com/crigroup/openrave-installation) for automatic installation.
 
 1. Modify the kinematics of the arm or TCP position (link6) by changing `ur5.robot.xml` respectively. You can find a description of the OpenRave XML file format [here](http://openrave.programmingvision.com/wiki/index.php/Format:XML).
 
