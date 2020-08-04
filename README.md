@@ -45,6 +45,19 @@ This implementation requires the following dependencies (tested on Ubuntu 16.04.
 
 1. Download and install [OpenRave](http://openrave.org/).Use [this bash script](https://github.com/crigroup/openrave-installation) for automatic installation.
 
+1. Generate URDF model from calibrated robot. You need to have the calibration file of your robot ready. See [here](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/tree/master/ur_calibration) for instructions to get the calibration file of your robot.
+    ```shell
+    xacro --inorder ~/UR_ws/src/fmauch_universal_robot/ur_e_description/urdf/ur5e_robot.urdf.xacro kinematics_config:='/home/hui/UR_ws/src/macs_dual_arm/etc/dual_arm_left.yaml' >> myrobot.urdf
+    ```
+
+1. Use ROS collada_urdf to convert from URDF to COLLADA DAE. (note: you might need to install collada_urdf packages first)
+    ```shell
+    # to install collada_urdf, run the following
+    sudo apt-get install ros-melodic-collada-urdf
+    # now we can generate the dae file
+    rosrun collada_urdf urdf_to_collada myrobot.urdf myrobot.dae
+    ```
+
 1. Modify the kinematics of the arm or TCP position (link6) by changing `ur5.robot.xml` respectively. You can find a description of the OpenRave XML file format [here](http://openrave.programmingvision.com/wiki/index.php/Format:XML).
 
 1. (Optional) Debug the kinematics using OpenRave's viewer:

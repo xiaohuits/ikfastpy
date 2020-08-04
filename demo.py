@@ -4,8 +4,10 @@ import ikfastpy
 # Initialize kinematics for UR5 robot arm
 ur5_kin = ikfastpy.PyKinematics()
 n_joints = ur5_kin.getDOF()
-
-joint_angles = [-3.1,-1.6,1.6,-1.6,-1.6,0.] # in radians
+joint_angles_degree = [0.0, -65.0, -80.0, 0.0, 125.0, 10.0]
+joint_angles = [0.0]*6 # in radians
+for i in range(6):
+    joint_angles[i] = joint_angles_degree[i]/180*np.pi
 
 # Test forward kinematics: get end effector pose from joint angles
 print("\nTesting forward kinematics:\n")
