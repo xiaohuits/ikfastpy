@@ -40,7 +40,7 @@
 
   <Body name="link2" type="dynamic">
     <offsetfrom>link1</offsetfrom>
-    <translation>-0.425 0</translation>
+    <translation>-0.425 0 0</translation>
     <rotationaxis>1 0 0 0</rotationaxis>
     <Geom type="box">
       <translation>0 0 0</translation>
@@ -62,7 +62,7 @@
 
   <Body name="link3" type="dynamic">
     <offsetfrom>link2</offsetfrom>
-    <translation>-0.3922 0</translation>
+    <translation>-0.3922 0 0</translation>
     <rotationaxis>1 0 0 0</rotationaxis>
     <Geom type="box">
       <translation>0 0 0</translation>
